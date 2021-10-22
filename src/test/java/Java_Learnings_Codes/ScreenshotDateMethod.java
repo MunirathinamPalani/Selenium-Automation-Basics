@@ -14,6 +14,5 @@ public class ScreenshotDateMethod {
 			String FileName = d.toString().replace(":", "_").replace(" ", "_") + ".png";
 			File ss = ((TakesScreenshot)webdriver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(ss, new File("C:\\Study\\ScreenPrint\\" + FileName));
-
 		}
 }

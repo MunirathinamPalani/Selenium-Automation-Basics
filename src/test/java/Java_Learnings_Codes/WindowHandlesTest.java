@@ -26,12 +26,7 @@ public class WindowHandlesTest
 	WebDriver driver=new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	driver.manage().window().maximize();
-	//WebDriverWait wait=new WebDriverWait(driver,20);
-	//wait.until(ExpectedConditions.visibilityOfElementLocated(null));
 	driver.get("http://www.naukri.com/");
-	//Actions a =new Actions(driver);
-	//a.moveToElement(null).perform();
-	//a.moveToElement(null).click().build().perform();
 	String parent=driver.getWindowHandle();
 	Set <String> s=driver.getWindowHandles();
 	Iterator<String> it=s.iterator();
@@ -51,6 +46,6 @@ public class WindowHandlesTest
 		driver.switchTo().window(parent);
 		System.out.println("Test Run Success");
 	}
-	driver.close();
+	driver.quit();
 	}
 }

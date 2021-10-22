@@ -2,12 +2,11 @@ package Java_Learnings_Codes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class ClickTest {
-
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "C:\\Study\\chromedriver_win32\\chromedriver.exe");
+	public void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\Study\\Driver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://en-gb.facebook.com/");
 		if(driver.findElement(By.linkText("Forgotten password?")).isDisplayed())
@@ -18,7 +17,6 @@ public class ClickTest {
 			System.out.println("If");
 		}
 		System.out.println("working");
-		driver.close();
+		driver.quit();
 	}
-
 }

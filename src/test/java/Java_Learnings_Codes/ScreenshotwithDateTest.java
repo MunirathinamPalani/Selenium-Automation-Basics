@@ -33,17 +33,14 @@ public class ScreenshotwithDateTest {
 		driver.get("http://www.amazon.com");
 		WebDriverWait wait=new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nav-link-accountList-nav-line-1")));
-		
 		WebElement a=driver.findElement(By.id("nav-link-accountList-nav-line-1"));
 		Actions act=new Actions(driver);
 		act.moveToElement(a).perform();
 		captureScreen(driver);
-		
 		WebElement b=driver.findElement(By.className("nav-text"));
 		act.moveToElement(b).click().build().perform();
 		captureScreen(driver);
 		Thread.sleep(1000);
-		
 		driver.close();
 	}
 }
